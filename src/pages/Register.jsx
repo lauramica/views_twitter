@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import "../FormsPages.css";
 
 function Register() {

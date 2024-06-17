@@ -1,8 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
 
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
@@ -15,7 +13,7 @@ function App() {
     {
       path: "/",
       element: <Home />,
-    }, 
+    },
     {
       path: "/login",
       element: <Login />,
@@ -24,14 +22,14 @@ function App() {
       path: "/register",
       element: <Register />,
     },
-     {
+    {
       path: "/:username",
       element: <User />,
     },
     {
       path: "*",
       element: <ErrorPage />,
-    }, */
+    },
   ]);
 
   return <RouterProvider router={router} />;
