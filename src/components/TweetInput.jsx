@@ -3,7 +3,7 @@ import "../Home.css";
 function TweetInput() {
   return (
     <>
-      <div className="formContainer">
+      <div className="formContainer p-2">
         <form>
           <div className="form-group">
             <label htmlFor="tweet-content">

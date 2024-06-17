@@ -10,7 +10,6 @@
 .formContainer {
   display: flex;
   flex-direction: column;
-  padding: 10px;
   border-bottom: solid;
   border-width: 1px;
   border: 1px rgb(70, 70, 70) solid;
@@ -32,22 +31,11 @@
   color: grey;
 }
 
-.tweetBox {
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: rgb(70, 70, 70);
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
-}
-h3 {
-  margin-left: 10px;
+.tweet-box {
+  height: 9rem;
+  border: 1px rgb(70, 70, 70) solid;
 }
 
-.tweetTextContainer {
-  margin-left: 20px;
-}
-
-.username {
-  color: grey;
+.img-box {
+  height: 9rem;
 }

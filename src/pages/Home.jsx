@@ -5,7 +5,7 @@ import TweetsList from "../components/TweetsList";
 function Home() {
   return (
     <>
-      <div className="container homeContainer">
+      <div className="homeContainer mt-3">
         <div className="row">
           <div className="col col-md-2 col-lg-4"></div>
           <div className="col col-md-6 col-lg-4">

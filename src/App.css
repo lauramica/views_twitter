@@ -8,3 +8,11 @@ body {
   object-fit: cover;
   border-radius: 50%;
 }
+
+.grey {
+  color: grey;
+}
+
+.bold {
+  font-size: bolder;
+}
