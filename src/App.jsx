@@ -4,6 +4,12 @@ import "./App.css";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 
+import Home from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import User from "./pages/User";
+
 function App() {
   const router = createBrowserRouter([
     /*     {

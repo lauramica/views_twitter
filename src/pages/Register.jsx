@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import "../FormsPages.css";
 
 function Register() {
@@ -82,4 +83,10 @@ function Register() {
     </>
   );
 }
+=======
+function Register() {
+  return <></>;
+}
+
+>>>>>>> Stashed changes
 export default Register;

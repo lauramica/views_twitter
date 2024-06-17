@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import "../FormsPages.css";
 
 function Login() {
@@ -45,4 +46,10 @@ function Login() {
     </>
   );
 }
+=======
+function Login() {
+  return <></>;
+}
+
+>>>>>>> Stashed changes
 export default Login;

@@ -1,0 +1,62 @@
+body {
+  background-color: #16232a;
+  color: white;
+}
+
+.homeContainer {
+  width: 800px;
+  margin: 0 auto;
+  border-left: solid;
+  border-right: solid;
+  border-width: 1px;
+  border-color: rgb(70, 70, 70);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(70, 70, 70);
+}
+
+.tweetInput {
+  background-color: #16232a;
+  height: 200px;
+  border-radius: 0px;
+  border: none;
+  color: white;
+}
+
+.submitButton {
+  position: relative;
+  left: 87%;
+  margin: 10px;
+}
+
+.tweetInput::placeholder {
+  color: grey;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.tweetBox {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(70, 70, 70);
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+h3 {
+  margin-left: 10px;
+}
+
+.tweetTextContainer {
+  margin-left: 20px;
+}
+
+.username {
+  color: grey;
+}
