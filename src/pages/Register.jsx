@@ -83,10 +83,4 @@ function Register() {
     </>
   );
 }
-=======
-function Register() {
-  return <></>;
-}
-
->>>>>>> Stashed changes
 export default Register;

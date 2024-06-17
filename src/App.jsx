@@ -12,10 +12,10 @@ import User from "./pages/User";
 
 function App() {
   const router = createBrowserRouter([
-    /*     {
+    {
       path: "/",
       element: <Home />,
-    }, */
+    }, 
     {
       path: "/login",
       element: <Login />,
@@ -24,7 +24,7 @@ function App() {
       path: "/register",
       element: <Register />,
     },
-    /*  {
+     {
       path: "/:username",
       element: <User />,
     },

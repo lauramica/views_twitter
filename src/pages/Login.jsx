@@ -46,10 +46,5 @@ function Login() {
     </>
   );
 }
-=======
-function Login() {
-  return <></>;
-}
 
->>>>>>> Stashed changes
 export default Login;
