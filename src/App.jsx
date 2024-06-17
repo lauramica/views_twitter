@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
-
+import Register from "./pages/Register";
 function App() {
   const router = createBrowserRouter([
     {

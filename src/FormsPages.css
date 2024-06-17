@@ -1,0 +1,36 @@
+.bg-form-container {
+  background-color: rgb(20, 23, 26);
+  border-radius: 15px;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.next-to-form-container {
+  display: none;
+}
+
+.form-container {
+  background-color: white;
+  padding: 4rem;
+  border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+  .bg-form-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .next-to-form-container {
+    display: block;
+    color: white;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .form-container {
+    border-radius: 0 15px 15px 0;
+  }
+}
