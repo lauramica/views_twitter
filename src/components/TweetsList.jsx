@@ -67,7 +67,7 @@ function TweetsList() {
         <div className="d-flex flex-column justify-content-center">
           <div className="d-flex">
             <p className="bold me-2">Gatito</p>
-            <p className="grey">@gatito</p>
+            <p className="grey">@gatito · 6hs</p>
           </div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,

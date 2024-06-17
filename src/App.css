@@ -1,10 +1,15 @@
 body {
-  background-color: black;
+  background-color: rgb(1, 16, 27);
+  max-width: 1500px;
+}
+
+.side-element {
+  width: 470px;
 }
 
 .profile-picture {
-  height: 4rem;
-  width: 4rem;
+  height: 60px;
+  width: 60px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -15,4 +20,14 @@ body {
 
 .bold {
   font-size: bolder;
+}
+
+textarea {
+  resize: none;
+}
+
+@media (max-width: 1024px) {
+  .side-bar {
+    width: 80px;
+  }
 }
