@@ -15,7 +15,7 @@ function Register() {
           <p>Create an account and start using X.</p>
           <form action="" className="p-0">
             <div className="mb-3">
-              <label for="firstname" className="form-label">
+              <label htmlFor="firstname" className="form-label">
                 Firstname
               </label>
               <input
@@ -26,7 +26,7 @@ function Register() {
               />
             </div>
             <div className="mb-3">
-              <label for="lastname" className="form-label">
+              <label htmlFor="lastname" className="form-label">
                 Lastname
               </label>
               <input
@@ -37,7 +37,7 @@ function Register() {
               />
             </div>
             <div className="mb-3">
-              <label for="email" className="form-label">
+              <label htmlFor="email" className="form-label">
                 Email address
               </label>
               <input
@@ -47,7 +47,7 @@ function Register() {
                 aria-describedby="email"
               />
               <div className="mb-3">
-                <label for="username" className="form-label">
+                <label htmlFor="username" className="form-label">
                   Username
                 </label>
                 <input
@@ -58,14 +58,14 @@ function Register() {
                 />
               </div>
               <div className="mb-3">
-                <label for="formFile" className="form-label">
+                <label fohtmlForr="formFile" className="form-label">
                   Default file input example
                 </label>
                 <input className="form-control" type="file" id="formFile" />
               </div>
             </div>
             <div>
-              <label for="password" className="form-label">
+              <label htmlFor="password" className="form-label">
                 Password
               </label>
               <input type="password" className="form-control" id="password" />

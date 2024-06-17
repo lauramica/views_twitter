@@ -5,9 +5,15 @@ import TweetsList from "../components/TweetsList";
 function Home() {
   return (
     <>
-      <div className="homeContainer border-left border-right">
-        <TweetInput />
-        <TweetsList />
+      <div className="container homeContainer">
+        <div className="row">
+          <div className="col col-md-2 col-lg-4"></div>
+          <div className="col col-md-6 col-lg-4">
+            <TweetInput />
+            <TweetsList />
+          </div>
+          <div className="col col-md-4"></div>
+        </div>
       </div>
     </>
   );

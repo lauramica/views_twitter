@@ -4,7 +4,7 @@ import axios from "axios";
 import "../Home.css";
 
 function TweetsList() {
-  const [tweets, setTweets] = useState([]);
+  /*   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
     const fetchTweets = async () => {
@@ -31,8 +31,8 @@ function TweetsList() {
 
     fetchTweets();
   }, []);
-
-  return (
+ */
+  /*   return (
     <>
       {tweets.map((tweet) => (
         <div key={tweet.id} className="tweetBox">
@@ -52,6 +52,26 @@ function TweetsList() {
         </div>
       ))}
     </>
+  ); */
+
+  return (
+    <div className="tweets-container">
+      <div className="tweet-box">
+        <div className="row">
+          <div className="col">
+            <img
+              src="../public/images/gatito.jpg"
+              alt="gatito"
+              className="profile-picture"
+            />
+          </div>
+          <div className="col">
+            <p>Gatito</p>
+            <p>@gatito</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -1,15 +1,10 @@
-body {
-  background-color: #16232a;
-  color: white;
-}
-
 .homeContainer {
-  width: 800px;
+  color: white;
   margin: 0 auto;
-  border-left: solid;
+  /*   border-left: solid;
   border-right: solid;
   border-width: 1px;
-  border-color: rgb(70, 70, 70);
+  border-color: rgb(70, 70, 70); */
 }
 
 .formContainer {
@@ -18,27 +13,23 @@ body {
   padding: 10px;
   border-bottom: solid;
   border-width: 1px;
-  border-color: rgb(70, 70, 70);
+  border: 1px rgb(70, 70, 70) solid;
 }
 
 .tweetInput {
-  background-color: #16232a;
-  height: 200px;
+  background-color: #000000;
   border-radius: 0px;
   border: none;
   color: white;
 }
 
-.submitButton {
-  position: relative;
-  left: 87%;
-  margin: 10px;
+.tweetInput:focus {
+  color: rgb(255, 255, 255);
+  background-color: black;
 }
 
 .tweetInput::placeholder {
   color: grey;
-  opacity: 0.5;
-  text-align: center;
 }
 
 .tweetBox {

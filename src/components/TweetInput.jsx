@@ -6,19 +6,23 @@ function TweetInput() {
       <div className="formContainer">
         <form>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">
-              <h3>Home</h3>
+            <label htmlFor="tweet-content">
+              <h3 className="m-0 pb-2">Home</h3>
             </label>
-            <input
-              type="email"
+            <textarea
+              rows="3"
+              type="text"
               className="form-control tweetInput"
-              id="exampleInputEmail1"
+              id="tweet-content"
+              name="tweet-content"
               placeholder="Whats happening?"
             />
           </div>
-          <button type="submit" className="btn btn-primary submitButton">
-            Submit
-          </button>
+          <div className="d-flex justify-content-end">
+            <button type="submit" className="btn btn-primary rounded-pill mt-2">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </>
