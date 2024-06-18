@@ -1,6 +1,6 @@
 import "../Home.css";
 
-function TweetInput() {
+function TweetInput({ users, tweets }) {
   return (
     <>
       <div className="formContainer d-flex flex-column pb-3">

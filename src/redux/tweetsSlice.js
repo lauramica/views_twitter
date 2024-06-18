@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const tweetsSlice = createSlice({
   name: "tweets",
   initialState: [],
   reducers: {
-    createTweet(state, action) {
-      return state;
+    fetchTweets(state, action) {
+      return action.payload;
     },
     deleteTweet(state, action) {
       return state;
@@ -17,5 +18,5 @@ const tweetsSlice = createSlice({
 });
 
 const { actions, reducer } = tweetsSlice;
-export const { createTweet, deleteTweet, tweetIsLiked } = actions;
+export const { fetchTweets, deleteTweet, tweetIsLiked } = actions;
 export default reducer;

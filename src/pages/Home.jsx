@@ -3,20 +3,8 @@ import TweetInput from "../components/TweetInput";
 import TweetsList from "../components/TweetsList";
 import Menu from "../components/Menu";
 import Trending from "../components/Trendings";
-import { fetchUsers } from "../redux/usersSlice";
-
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 function Home() {
-  const dispatch = useDispatch();
-
-  const users = useSelector((state) => state.users.users);
-
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
-
   return (
     <>
       <div className="container d-flex homeContainer">
