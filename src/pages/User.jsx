@@ -6,7 +6,7 @@ import Trending from "../components/Trendings";
 function User() {
   return (
     <>
-      <div className="container d-flex homeContainer mt-3">
+      <div className="container d-flex userContainer">
         <div className="side-element side-bar">
           <Menu />
         </div>
@@ -15,7 +15,7 @@ function User() {
           <hr />
           <TweetsList />
         </div>
-        <div className="side-element">
+        <div className="side-element p-2">
           <Trending />
         </div>
       </div>

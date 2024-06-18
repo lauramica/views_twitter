@@ -1,12 +1,21 @@
-body {
+:root {
   margin: 0;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+body {
   background-color: rgb(1, 16, 27);
   max-width: 1500px;
 }
 
 .side-element {
-  width: 470px;
+  width: 350px;
+}
+
+.menu-container {
+  height: 100vh;
 }
 
 .profile-picture {
@@ -28,8 +37,34 @@ textarea {
   resize: none;
 }
 
+.tweet-box {
+  border-bottom: solid;
+  border-width: 1px;
+}
+
+.img-box {
+  height: 9rem;
+}
+
+.trending-box {
+  background-color: rgba(100, 99, 109, 0.13);
+  border-radius: 15px;
+}
+
 @media (max-width: 1024px) {
   .side-bar {
     width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending-box {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu-container p {
+    display: none;
   }
 }

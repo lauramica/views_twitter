@@ -2,7 +2,7 @@ function Menu() {
   console.log(typeof window.innerWidth);
 
   return (
-    <div className="menu-container d-flex flex-column justify-content-between">
+    <div className="menu-container d-flex flex-column justify-content-between p-2">
       <div>
         <div className="p-2">
           <i className="bi bi-twitter-x x-icon-styles"></i>
@@ -22,15 +22,15 @@ function Menu() {
         <button className="btn btn-primary rounded-pill d-block d-lg-none">
           <i className="bi bi-feather"></i>
         </button>
-        <button className="btn btn-primary rounded-pill w-100 m-1 d-none d-lg-block">
+        <button className="btn btn-primary rounded-pill w-100 d-none d-lg-block">
           Tweet
         </button>
       </div>
-      <div>
+      <div className="mb-2">
         <button className="btn btn-danger rounded-pill d-block d-lg-none">
           <i class="bi bi-box-arrow-left"></i>
         </button>
-        <button className="btn btn-danger rounded-pill w-100 m-1 d-none d-lg-block">
+        <button className="btn btn-danger rounded-pill w-100 d-none d-lg-block">
           Logout
         </button>
       </div>
