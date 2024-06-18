@@ -1,6 +1,4 @@
 function Menu() {
-  console.log(typeof window.innerWidth);
-
   return (
     <div className="menu-container d-flex flex-column justify-content-between p-2">
       <div>
@@ -28,7 +26,7 @@ function Menu() {
       </div>
       <div className="mb-2">
         <button className="btn btn-danger rounded-pill d-block d-lg-none">
-          <i class="bi bi-box-arrow-left"></i>
+          <i className="bi bi-box-arrow-left"></i>
         </button>
         <button className="btn btn-danger rounded-pill w-100 d-none d-lg-block">
           Logout
