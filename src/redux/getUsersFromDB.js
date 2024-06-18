@@ -9,14 +9,15 @@ function users() {
       try {
         const response = await axios.get("http://localhost:3000/users");
         setUsersDB(response.data);
-        return usersDB;
       } catch (err) {
         console.err("Error fetching users:", err);
       }
       console.log(response.data);
     };
     fetchUsers();
-  });
+  }, []);
+
+  return usersDB;
 }
 
 export default users;

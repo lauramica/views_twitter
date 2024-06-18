@@ -38,7 +38,7 @@ function Login() {
             </button>
           </form>
           <p className="text-center m-0">
-            Don't have an account? <a href="">Sign up</a>
+            Don't have an account? <a href="/register">Sign up</a>
           </p>
         </div>
       </div>

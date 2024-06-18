@@ -1,35 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { Spinner } from "react-bootstrap";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import "../Home.css";
+import Tweet from "./Tweet";
 
 function TweetsList() {
   return (
-    <div className="tweets-container">
-      <div className="tweet-box d-flex">
-        <div className="img-box">
-          <img
-            src="../images/gatito.jpg"
-            alt="gatito"
-            className="profile-picture m-2"
-          />
-        </div>
-        <div className="d-flex flex-column justify-content-center">
-          <div className="d-flex">
-            <p className="bold me-2">Gatito</p>
-            <p className="grey">@gatito · 6hs</p>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-            dolor.
-          </p>
-          <p className="m-0">
-            <i className="bi bi-heart"></i>
-            <i className="bi bi-heart-fill"></i>
-          </p>
-        </div>
-      </div>
-    </div>
+    /* <InfiniteScroll
+      className="overflow-visible"
+      dataLength={movies.length}
+      next={() => setPage(page + 1)}
+      hasMore={true}
+      loader={
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Cargando...</span>
+        </Spinner>
+      }
+      endMessage={
+        <p style={{ textAlign: "center" }}>
+          <b>Eso es todo!</b>
+        </p>
+      }
+    > */
+    <Tweet />
+    /* </InfiniteScroll> */
   );
 }
 

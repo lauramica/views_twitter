@@ -6,7 +6,7 @@ function Register() {
       <div className="container bg-form-container">
         <div className="col-md-6 col-lg-7 next-to-form-container">
           <h2>
-            <i class="bi bi-twitter-x x-icon-styles"></i>
+            <i className="bi bi-twitter-x x-icon-styles"></i>
           </h2>
           <h4 className="m-0">Hi! Welcome to X Clone.</h4>
         </div>
@@ -58,7 +58,7 @@ function Register() {
                 />
               </div>
               <div className="mb-3">
-                <label fohtmlForr="formFile" className="form-label">
+                <label htmlFor="formFile" className="form-label">
                   Default file input example
                 </label>
                 <input className="form-control" type="file" id="formFile" />
@@ -75,7 +75,7 @@ function Register() {
             </button>
           </form>
           <p className="text-center m-0">
-            Already have an account? <a href="">Sign here</a>
+            Already have an account? <a href="/login">Sign here</a>
           </p>
         </div>
       </div>

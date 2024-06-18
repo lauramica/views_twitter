@@ -1,9 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
-import usersDB from "./getUsersFromDB";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
+  const response = await axios.get("http://localhost:3000/users");
+  return response.data;
+});
 
 const usersSlice = createSlice({
   name: "users",
-  initialState: [usersDB],
+  initialState: {
+    users: [],
+  },
+
   reducers: {
     createUser(state, action) {
       return state;
@@ -18,7 +26,21 @@ const usersSlice = createSlice({
       console.log(state);
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
+  },
 });
+
+/* export const fetchUsers = () => async (dispatch) => {
+  try {
+    const users = await usersDB();
+    dispatch(usersSlice.actions.setUsers(users));
+  } catch (err) {
+    console.log("Error fetching users:", err);
+  }
+}; */
 
 const { actions, reducer } = usersSlice;
 export const { createUser, loginUser, logoutUser, showUsers } = actions;
