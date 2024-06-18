@@ -7,7 +7,7 @@ import Trending from "../components/Trendings";
 function Home() {
   return (
     <>
-      <div className="container d-flex homeContainer mt-3">
+      <div className="container d-flex homeContainer">
         <div className="side-element side-bar">
           <Menu />
         </div>
@@ -16,7 +16,7 @@ function Home() {
           <TweetInput />
           <TweetsList />
         </div>
-        <div className="side-element">
+        <div className="side-element p-2">
           <Trending />
         </div>
       </div>

@@ -1,3 +1,7 @@
+.menu-container {
+  height: 100vh;
+}
+
 .homeContainer {
   color: white;
   margin: 0 auto;
@@ -36,7 +40,6 @@
 }
 
 .tweet-box {
-  height: 9rem;
   border-bottom: solid;
   border-width: 1px;
 }

@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+  box-sizing: border-box;
   background-color: rgb(1, 16, 27);
   max-width: 1500px;
 }
