@@ -1,6 +1,34 @@
 import "../FormsPages.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../redux/userSlice";
 
 function Login() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    const login = async () => {
+      const response = await axios({
+        url: `http://localhost:3000/tokens`,
+        method: "POST",
+        data: user,
+      });
+      dispatch(loginUser(response.data));
+      navigate("/");
+    };
+    login();
+  };
+
   return (
     <>
       <div className="container bg-form-container">
@@ -13,15 +41,23 @@ function Login() {
         <div className="col col-md-6 col-lg-5 form-container">
           <h1>Login</h1>
           <p>Ready to start using X?</p>
-          <form action="" className="p-0">
+          <form
+            action=""
+            method="POST"
+            onSubmit={handleOnSubmit}
+            className="p-0"
+          >
             <div className="mb-3">
               <div className="mb-3">
                 <input
                   type="text"
                   className="form-control"
-                  id="username"
-                  aria-describedby="username"
-                  placeholder="username or email"
+                  id="email"
+                  name="email"
+                  value={user.email}
+                  aria-describedby="email"
+                  placeholder="Email"
+                  onChange={(e) => setUser({ ...user, email: e.target.value })}
                 />
               </div>
             </div>
@@ -30,7 +66,10 @@ function Login() {
                 type="password"
                 className="form-control"
                 id="password"
+                name="password"
+                value={user.password}
                 placeholder="Password"
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
             </div>
             <button className="btn btn-primary form-control rounded-pill mb-4 my-4">

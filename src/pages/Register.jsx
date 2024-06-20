@@ -1,6 +1,34 @@
 import "../FormsPages.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    username: "",
+    photo: "",
+    password: "",
+  });
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    const storeUser = async () => {
+      await axios({
+        url: `http://localhost:3000/users`,
+        method: "POST",
+        data: user,
+      });
+    };
+    storeUser();
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="container bg-form-container">
@@ -13,7 +41,12 @@ function Register() {
         <div className="col col-md-6 col-lg-5 form-container">
           <h1>Sign up</h1>
           <p>Create an account and start using X.</p>
-          <form action="" className="p-0">
+          <form
+            action=""
+            method="POST"
+            onSubmit={handleOnSubmit}
+            className="p-0"
+          >
             <div className="mb-3">
               <label htmlFor="firstname" className="form-label">
                 Firstname
@@ -22,7 +55,12 @@ function Register() {
                 type="text"
                 className="form-control"
                 id="fistname"
+                name="firstname"
+                value={user.firstname}
                 aria-describedby="firstname"
+                onChange={(e) =>
+                  setUser({ ...user, firstname: e.target.value })
+                }
               />
             </div>
             <div className="mb-3">
@@ -33,7 +71,10 @@ function Register() {
                 type="text"
                 className="form-control"
                 id="lastname"
+                name="lastname"
+                value={user.lastname}
                 aria-describedby="lastname"
+                onChange={(e) => setUser({ ...user, lastname: e.target.value })}
               />
             </div>
             <div className="mb-3">
@@ -44,7 +85,10 @@ function Register() {
                 type="email"
                 className="form-control"
                 id="email"
+                name="email"
+                value={user.email}
                 aria-describedby="email"
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
               <div className="mb-3">
                 <label htmlFor="username" className="form-label">
@@ -54,21 +98,40 @@ function Register() {
                   type="text"
                   className="form-control"
                   id="username"
+                  name="username"
+                  value={user.username}
                   aria-describedby="username"
+                  onChange={(e) =>
+                    setUser({ ...user, username: e.target.value })
+                  }
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="formFile" className="form-label">
+                <label htmlFor="photo" className="form-label">
                   Default file input example
                 </label>
-                <input className="form-control" type="file" id="formFile" />
+                <input
+                  className="form-control"
+                  type="file"
+                  id="photo"
+                  name="photo"
+                  value={user.photo}
+                  onChange={(e) => setUser({ ...user, photo: e.target.value })}
+                />
               </div>
             </div>
             <div>
               <label htmlFor="password" className="form-label">
                 Password
               </label>
-              <input type="password" className="form-control" id="password" />
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                name="passwprd"
+                value={user.password}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
+              />
             </div>
             <button className="btn btn-primary form-control rounded-pill mb-4 my-4">
               Sign up

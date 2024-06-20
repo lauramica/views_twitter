@@ -1,5 +1,5 @@
 import ProfileHeader from "../components/ProfileHeader";
-import TweetsList from "../components/TweetsList";
+import UserTweets from "../components/UserTweets";
 import Menu from "../components/Menu";
 import Trending from "../components/Trendings";
 
@@ -15,7 +15,7 @@ function User() {
         <div className="w-100 px-4">
           <ProfileHeader />
           <hr />
-          <TweetsList />
+          <UserTweets />
         </div>
         <div className="side-element p-2">
           <Trending />

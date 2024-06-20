@@ -1,4 +1,16 @@
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logoutUser } from "../redux/userSlice";
+import { Link } from "react-router-dom";
+
 function Menu() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    dispatch(logoutUser());
+    navigate("/login");
+  };
   return (
     <div className="menu-container d-flex flex-column justify-content-between p-2">
       <div>
@@ -11,7 +23,7 @@ function Menu() {
           </span>
           <p className="m-0">Home</p>
         </div>
-        <div className="d-flex p-2">
+        <div className="d-flex p-2" href="/:username">
           <span className="me-3">
             <i className="bi bi-person"></i>
           </span>
@@ -25,10 +37,16 @@ function Menu() {
         </button>
       </div>
       <div className="mb-2">
-        <button className="btn btn-danger rounded-pill d-block d-lg-none">
+        <button
+          className="btn btn-danger rounded-pill d-block d-lg-none"
+          onClick={() => handleOnClick()}
+        >
           <i className="bi bi-box-arrow-left"></i>
         </button>
-        <button className="btn btn-danger rounded-pill w-100 d-none d-lg-block">
+        <button
+          className="btn btn-danger rounded-pill w-100 d-none d-lg-block"
+          onClick={() => handleOnClick()}
+        >
           Logout
         </button>
       </div>

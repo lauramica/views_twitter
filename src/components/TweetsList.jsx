@@ -9,13 +9,15 @@ import { fetchTweets } from "../redux/tweetsSlice";
 function TweetsList() {
   const dispatch = useDispatch();
 
+  const user = useSelector((state) => state.user);
+
   useEffect(() => {
     const getTweets = async () => {
       const response = await axios({
         url: `http://localhost:3000/tweets`,
         method: "GET",
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjcwMmQzMjU1NDZjMTUwNDhkYWQ5ZTUiLCJpYXQiOjE3MTg4NTIzMDZ9.rHEl7FE-SS5wjqTwcsONSMK2p6MkknL9tGbFD7xhYT4
+          Authorization: `Bearer ${user.token}
           `,
         },
       });

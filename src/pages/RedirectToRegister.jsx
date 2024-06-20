@@ -5,7 +5,7 @@ function RedirectToUse() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate(`/register`);
+    navigate("/register");
   });
 
   return <></>;
