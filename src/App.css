@@ -42,6 +42,7 @@ textarea {
 .tweet-box {
   border-bottom: solid;
   border-width: 1px;
+  width: 100%;
 }
 
 .img-box {

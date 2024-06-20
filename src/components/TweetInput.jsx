@@ -15,21 +15,22 @@ function TweetInput({ users, tweets }) {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-
-    const storeUser = async () => {
-      const response = await axios({
-        url: `http://localhost:3000/tweets`,
-        method: "POST",
-        data: { tweet },
-        headers: {
-          Authorization: `Bearer ${user.token}
-          `,
-        },
-      });
-      console.log(response);
-      dispatch(addTweet({ ...response.data.newTweet, user, content: tweet }));
-    };
-    storeUser();
+    if (tweet !== "") {
+      const storeTweet = async () => {
+        const response = await axios({
+          url: `http://localhost:3000/tweets`,
+          method: "POST",
+          data: { tweet },
+          headers: {
+            Authorization: `Bearer ${user.token}
+            `,
+          },
+        });
+        dispatch(addTweet({ ...response.data.newTweet, user, content: tweet }));
+      };
+      storeTweet();
+      setTweet("");
+    }
   };
 
   return (
@@ -58,7 +59,7 @@ function TweetInput({ users, tweets }) {
                 id="tweet-content"
                 name="tweet-content"
                 placeholder="Whats happening?"
-                value={tweet.content}
+                value={tweet}
                 aria-describedby="firstname"
                 onChange={(e) => setTweet(e.target.value)}
               />

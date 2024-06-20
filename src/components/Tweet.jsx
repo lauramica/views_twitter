@@ -45,16 +45,15 @@ function Tweet({ tweet }) {
             </p>
           </div>
           <p>{tweet.content}</p>
-          <p className="m-0">
+          <div className="m-0 d-flex justify-content-between">
             <i className="bi bi-heart"></i>
             {/*  <i className="bi bi-heart-fill"></i> */}
-          </p>
-
-          {tweet.user._id === user._id ? (
-            <button onClick={handleOnClick}>delete</button>
-          ) : (
-            <></>
-          )}
+            {tweet.user._id === user._id ? (
+              <i class="bi bi-trash3" onClick={handleOnClick}></i>
+            ) : (
+              <></>
+            )}{" "}
+          </div>
         </div>
       </div>
     </div>
