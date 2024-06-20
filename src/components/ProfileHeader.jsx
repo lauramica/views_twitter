@@ -1,7 +1,10 @@
 import React from "react";
 import "../ProfileUser.css";
+import { useSelector } from "react-redux";
 
 function ProfileHeader() {
+  const user = useSelector((state) => state.user);
+
   return (
     <div className="profile-header">
       <div className="bg-profile">
@@ -12,22 +15,21 @@ function ProfileHeader() {
         />
       </div>
       <img
-        src="../images/gatito.jpg"
+        src={user.photo}
         alt="user-profile-image"
         className="profile-avatar img-fluid"
       />
       <div>
         <div className="d-flex justify-content-between">
           <span className="lh-1">
-            <h3>Name Lastname</h3>
-            <p className="grey">@username</p>
+            <h3>
+              {user.firstname} {user.lastname}
+            </h3>
+            <p className="grey">@{user.username}</p>
           </span>
           <small className="text-nowrap grey">19 Following 123 Followers</small>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id nam error
-          quo quis modi quidem asperiores deserunt, perspiciatis aperiam ex?
-        </p>
+        <p>{user.description}</p>
       </div>
     </div>
   );

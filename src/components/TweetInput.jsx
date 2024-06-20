@@ -1,19 +1,54 @@
 import "../Home.css";
+import { addTweet } from "../redux/tweetsSlice";
+
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function TweetInput({ users, tweets }) {
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [tweet, setTweet] = useState("");
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    const storeUser = async () => {
+      const response = await axios({
+        url: `http://localhost:3000/tweets`,
+        method: "POST",
+        data: { tweet },
+        headers: {
+          Authorization: `Bearer ${user.token}
+          `,
+        },
+      });
+      console.log(response);
+      dispatch(addTweet({ ...response.data.newTweet, user, content: tweet }));
+    };
+    storeUser();
+  };
+
   return (
     <>
       <div className="formContainer d-flex flex-column pb-3">
         <div className="d-flex justify-content-between">
           <div className="img-box">
             <img
-              src="../images/gatito.jpg"
+              src={user.photo}
               alt="gatito"
               className="profile-picture m-2"
             />
           </div>
           <div className="d-flex w-100">
-            <form className="tweet-form">
+            <form
+              className="tweet-form"
+              method="POST"
+              onSubmit={handleOnSubmit}
+            >
               <label htmlFor="tweet-content"></label>
               <textarea
                 rows="3"
@@ -23,6 +58,9 @@ function TweetInput({ users, tweets }) {
                 id="tweet-content"
                 name="tweet-content"
                 placeholder="Whats happening?"
+                value={tweet.content}
+                aria-describedby="firstname"
+                onChange={(e) => setTweet(e.target.value)}
               />
 
               <div className="d-flex justify-content-end">

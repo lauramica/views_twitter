@@ -8,15 +8,18 @@ const tweetsSlice = createSlice({
     fetchTweets(state, action) {
       return action.payload;
     },
-    deleteTweet(state, action) {
-      return state;
+    destroyTweet(state, action) {
+      return state.filter((tweet) => tweet._id !== action.payload);
     },
     tweetIsLiked(state, action) {
       return state;
+    },
+    addTweet(state, action) {
+      state.unshift(action.payload);
     },
   },
 });
 
 const { actions, reducer } = tweetsSlice;
-export const { fetchTweets, deleteTweet, tweetIsLiked } = actions;
+export const { fetchTweets, destroyTweet, tweetIsLiked, addTweet } = actions;
 export default reducer;

@@ -1,5 +1,30 @@
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+
+import { destroyTweet } from "../redux/tweetsSlice";
+
 function Tweet({ tweet }) {
   const formattedDate = new Date(tweet.createdAt).toLocaleDateString();
+  const user = useSelector((state) => state.user);
+
+  const { _id } = tweet;
+  const dispatch = useDispatch();
+
+  const handleOnClick = () => {
+    const deleteTweet = async () => {
+      await axios({
+        url: `http://localhost:3000/tweets/${_id}`,
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}
+          `,
+        },
+      });
+      dispatch(destroyTweet(_id));
+    };
+    deleteTweet();
+  };
+
   return (
     <div className="tweets-container">
       <div className="tweet-box d-flex align-items-start">
@@ -24,6 +49,12 @@ function Tweet({ tweet }) {
             <i className="bi bi-heart"></i>
             {/*  <i className="bi bi-heart-fill"></i> */}
           </p>
+
+          {tweet.user._id === user._id ? (
+            <button onClick={handleOnClick}>delete</button>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>
