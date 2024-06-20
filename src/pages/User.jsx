@@ -3,6 +3,8 @@ import TweetsList from "../components/TweetsList";
 import Menu from "../components/Menu";
 import Trending from "../components/Trendings";
 
+import "../ProfileUser.css";
+
 function User() {
   return (
     <>

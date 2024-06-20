@@ -17,6 +17,7 @@ body {
 
 .menu-container {
   height: 100vh;
+  position: fixed;
 }
 
 .profile-picture {
@@ -50,6 +51,7 @@ textarea {
 .trending-box {
   background-color: rgba(100, 99, 109, 0.13);
   border-radius: 15px;
+  position: fixed;
 }
 
 @media (max-width: 1024px) {

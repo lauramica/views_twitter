@@ -15,7 +15,7 @@ function TweetsList() {
         url: `http://localhost:3000/tweets`,
         method: "GET",
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjcwMzYxZDkzYmM4OTdlMDA1MzY3ZjAiLCJpYXQiOjE3MTg3MzkxMzh9.0kXtEEREhWlHTfFvO-kJ68PRpzA0z4_UhQRkIwkPtks
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjcwMmQzMjU1NDZjMTUwNDhkYWQ5ZTUiLCJpYXQiOjE3MTg4NTIzMDZ9.rHEl7FE-SS5wjqTwcsONSMK2p6MkknL9tGbFD7xhYT4
           `,
         },
       });
