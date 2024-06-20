@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../redux/userSlice";
 import { Link } from "react-router-dom";
@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 function Menu() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const user = useSelector((state) => state.user);
 
   const handleOnClick = () => {
     dispatch(logoutUser());
@@ -21,13 +23,20 @@ function Menu() {
           <span className="me-3">
             <i className="bi bi-house-fill"></i>
           </span>
-          <p className="m-0">Home</p>
+          <Link to={`/`} className="text-decoration-none text-light">
+            <p className="m-0">Home</p>
+          </Link>
         </div>
-        <div className="d-flex p-2" href="/:username">
+        <div className="d-flex p-2">
           <span className="me-3">
             <i className="bi bi-person"></i>
           </span>
-          <p className="m-0">Profile</p>
+          <Link
+            to={`/${user.userId}`}
+            className="text-decoration-none text-light"
+          >
+            <p className="m-0">Profile</p>
+          </Link>
         </div>
         <button className="btn btn-primary rounded-pill d-block d-lg-none">
           <i className="bi bi-feather"></i>

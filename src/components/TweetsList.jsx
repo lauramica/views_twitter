@@ -10,6 +10,7 @@ function TweetsList() {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.user);
+  const tweets = useSelector((state) => state.tweets);
 
   useEffect(() => {
     const getTweets = async () => {
@@ -25,8 +26,6 @@ function TweetsList() {
     };
     getTweets();
   }, []);
-
-  const tweets = useSelector((state) => state.tweets);
 
   return (
     <>

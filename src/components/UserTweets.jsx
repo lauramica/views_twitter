@@ -11,7 +11,7 @@ function UserTweets() {
   const user = useSelector((state) => state.user);
   const tweets = useSelector((state) => state.tweets);
 
-  const userTweets = tweets.filter((tweet) => tweet.user.id !== user.userId);
+  const userTweets = tweets.filter((tweet) => tweet.user.id === user.userId);
 
   return (
     <>

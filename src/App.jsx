@@ -23,7 +23,7 @@ function App() {
       element: <Register />,
     },
     {
-      path: "/:username",
+      path: "/:userId",
       element: <User />,
     },
     {
