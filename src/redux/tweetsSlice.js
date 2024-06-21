@@ -12,7 +12,11 @@ const tweetsSlice = createSlice({
       return state.filter((tweet) => tweet._id !== action.payload);
     },
     tweetIsLiked(state, action) {
-      return state;
+      const tweet = state.find((t) => action.payload.tweetId === t._id);
+
+      tweet.likes.some((user) => action.payload.userId === user)
+        ? tweet.likes.splice(action.payload.userId)
+        : tweet.likes.push(action.payload.userId);
     },
     addTweet(state, action) {
       state.unshift(action.payload);

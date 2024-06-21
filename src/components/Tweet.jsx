@@ -2,26 +2,47 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { destroyTweet } from "../redux/tweetsSlice";
+import { useSelector } from "react-redux";
+
+import { tweetIsLiked } from "../redux/tweetsSlice";
 
 function Tweet({ tweet, user }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const formattedDate = new Date(tweet.createdAt).toLocaleDateString();
 
+  const loggedUser = useSelector((state) => state.user);
+
   const { _id } = tweet;
+
   const handleDelete = () => {
     const deleteTweet = async () => {
       await axios({
         url: `http://localhost:3000/tweets/${_id}`,
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${user.token}
+          Authorization: `Bearer ${loggedUser.token}
           `,
         },
       });
       dispatch(destroyTweet(_id));
     };
     deleteTweet();
+  };
+
+  const handleLike = () => {
+    const likeTweet = async () => {
+      await axios({
+        url: `http://localhost:3000/tweets/${_id}`,
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${loggedUser.token}
+          `,
+        },
+      });
+      dispatch(tweetIsLiked({ tweetId: tweet._id, userId: loggedUser._id }));
+    };
+    likeTweet();
   };
 
   return (
@@ -49,9 +70,16 @@ function Tweet({ tweet, user }) {
           </div>
           <p>{tweet.content}</p>
           <div className="m-0 d-flex justify-content-between">
-            <i className="bi bi-heart"></i>
-            {/*  <i className="bi bi-heart-fill"></i> */}
-            {tweet.user._id === user._id ? (
+            <i
+              className={
+                tweet.likes.some((user) => loggedUser._id === user)
+                  ? "bi bi-heart-fill text-danger"
+                  : "bi bi-heart"
+              }
+              onClick={handleLike}
+            ></i>
+            {tweet.user._id === loggedUser._id ||
+            tweet.user === loggedUser._id ? (
               <i className="bi bi-trash3" onClick={handleDelete}></i>
             ) : (
               <></>
