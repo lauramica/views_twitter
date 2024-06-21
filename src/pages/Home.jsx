@@ -15,7 +15,7 @@ function Home() {
   if (!user.token) {
     useEffect(() => {
       navigate("/login");
-    });
+    }, []);
   } else {
     return (
       <>
@@ -28,7 +28,7 @@ function Home() {
             <TweetInput />
             <TweetsList />
           </div>
-          <div className="side-element p-2">
+          <div className="side-element trending p-2">
             <Trending />
           </div>
         </div>

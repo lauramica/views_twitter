@@ -35,6 +35,10 @@ body {
   font-size: bolder;
 }
 
+.circle-button {
+  border-radius: 50%;
+}
+
 textarea {
   resize: none;
 }
@@ -55,20 +59,30 @@ textarea {
   position: fixed;
 }
 
-@media (max-width: 1024px) {
-  .side-bar {
-    width: 80px;
-  }
+.as-link:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .trending-box {
+  .trending {
     display: none;
   }
 }
 
 @media (max-width: 1024px) {
-  .menu-container p {
+  .side-bar {
+    width: 80px;
+  }
+  .menu-text {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .block-element {
+    display: block;
+  }
+  .unblock-element {
     display: none;
   }
 }

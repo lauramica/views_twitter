@@ -1,6 +1,6 @@
 function Trending() {
   return (
-    <div className="trending-box p-3">
+    <div className="trending-box trending p-3">
       <h4>What's happening</h4>
       <div>
         <p className="grey m-0">Programming · Trending</p>

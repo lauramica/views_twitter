@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function TweetInput() {
   const user = useSelector((state) => state.user);
@@ -37,12 +38,13 @@ function TweetInput() {
       <div className="formContainer d-flex flex-column pb-3">
         <div className="d-flex justify-content-between">
           <div className="img-box">
-            <img
-              src={user.photo}
-              alt="avatar"
-              className="profile-picture m-2"
-              onClick={() => navigate(`/${user.username}`)}
-            />
+            <Link to={`/${user.username}`}>
+              <img
+                src={user.photo}
+                alt="avatar"
+                className="profile-picture m-2"
+              />
+            </Link>
           </div>
           <div className="d-flex w-100">
             <form className="tweet-form" method="POST" onSubmit={handlePost}>
@@ -65,7 +67,7 @@ function TweetInput() {
                   type="submit"
                   className="btn btn-primary rounded-pill m-2"
                 >
-                  Submit
+                  Post
                 </button>
               </div>
             </form>

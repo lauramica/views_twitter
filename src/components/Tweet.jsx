@@ -1,10 +1,7 @@
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { destroyTweet } from "../redux/tweetsSlice";
-import { useSelector } from "react-redux";
-
-import { tweetIsLiked } from "../redux/tweetsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
+import { destroyTweet, tweetIsLiked } from "../redux/tweetsSlice";
 
 function Tweet({ tweet, user }) {
   const dispatch = useDispatch();
@@ -49,17 +46,14 @@ function Tweet({ tweet, user }) {
     <div className="tweets-container">
       <div className="tweet-box d-flex align-items-start">
         <div className="img-box m-2">
-          <img
-            src={user.photo}
-            alt="avatar"
-            className="profile-picture"
-            onClick={() => navigate(`/${user.username}`)}
-          />
+          <Link to={`/${user.username}`}>
+            <img src={user.photo} alt="avatar" className="profile-picture" />
+          </Link>
         </div>
         <div className="d-flex flex-column justify-content-center mt-2">
           <div className="d-flex">
             <p
-              className="bold me-2"
+              className="bold me-2 as-link"
               onClick={() => navigate(`/${user.username}`)}
             >
               {user.firstname} {user.lastname}
@@ -83,7 +77,7 @@ function Tweet({ tweet, user }) {
               <i className="bi bi-trash3" onClick={handleDelete}></i>
             ) : (
               <></>
-            )}{" "}
+            )}
           </div>
         </div>
       </div>

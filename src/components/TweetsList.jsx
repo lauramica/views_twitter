@@ -1,10 +1,9 @@
+import axios from "axios";
 import "../Home.css";
 import Tweet from "./Tweet";
-
-import React, { useEffect } from "react";
+import { React, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTweets } from "../redux/tweetsSlice";
-import axios from "axios";
 
 function TweetsList() {
   const dispatch = useDispatch();
@@ -30,7 +29,7 @@ function TweetsList() {
   return (
     <>
       {tweets.map((tweet) => (
-        <div key={tweet.id}>
+        <div key={tweet._id}>
           <Tweet tweet={tweet} user={tweet.user} />
         </div>
       ))}

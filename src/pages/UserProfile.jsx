@@ -21,27 +21,27 @@ function User() {
 
   const [user, setUser] = useState({});
 
-  useEffect(() => {
-    const getUser = async () => {
-      const response = await axios({
-        url: `http://localhost:3000/users/${params.username}`,
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${loggedUser.token}
-          `,
-        },
-      });
-      setUser(response.data);
-      dispatch(fetchTweets(response.data.tweets));
-    };
-    getUser();
-  }, []);
-
   if (!loggedUser.token) {
     useEffect(() => {
       navigate("/login");
-    });
+    }, []);
   } else {
+    useEffect(() => {
+      const getUser = async () => {
+        const response = await axios({
+          url: `http://localhost:3000/users/${params.username}`,
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${loggedUser.token}
+            `,
+          },
+        });
+        setUser(response.data);
+        dispatch(fetchTweets(response.data.tweets));
+      };
+      getUser();
+    }, []);
+
     return (
       <>
         <div className="container d-flex userContainer">
@@ -51,12 +51,12 @@ function User() {
           <div className="w-100 px-4">
             <ProfileHeader user={user} />
             {tweets.map((tweet) => (
-              <div key={tweet.id}>
+              <div key={tweet._id}>
                 <Tweet tweet={tweet} user={user} />
               </div>
             ))}
           </div>
-          <div className="side-element p-2">
+          <div className="side-element trending p-2">
             <Trending />
           </div>
         </div>

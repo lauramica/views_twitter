@@ -3,21 +3,26 @@
   margin: 0 auto;
 }
 
-.bg-profile {
+.profile-banner {
   width: 100%;
-  height: 50%;
-  display: flex;
-  position: relative;
-  z-index: -1;
+  height: 250px;
+  background-image: url(../public/images/bg-profile-img.jpg);
+  background-size: cover;
 }
 
 .profile-avatar {
-  height: 100px;
-  width: 100px;
+  height: 140px;
+  width: 140px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid white;
-  display: block;
-  margin-top: -50px;
   margin-inline-start: 10px;
+  border: 4px white solid;
+  margin-top: -70px;
+}
+
+@media (min-width: 768px) {
+  .profile-banner {
+    width: 100%;
+    height: 200px;
+  }
 }
