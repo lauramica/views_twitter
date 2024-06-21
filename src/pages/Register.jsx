@@ -1,7 +1,7 @@
 import "../FormsPages.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Register() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Register() {
     password: "",
   });
 
-  const handleOnSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
 
     const storeUser = async () => {
@@ -44,7 +44,7 @@ function Register() {
           <form
             action=""
             method="POST"
-            onSubmit={handleOnSubmit}
+            onSubmit={handleRegister}
             className="p-0"
           >
             <div className="mb-3">
@@ -138,7 +138,7 @@ function Register() {
             </button>
           </form>
           <p className="text-center m-0">
-            Already have an account? <a href="/login">Sign here</a>
+            Already have an account? <Link to="/login">Sign here</Link>
           </p>
         </div>
       </div>

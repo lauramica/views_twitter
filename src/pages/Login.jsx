@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../redux/userSlice";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Login() {
     password: "",
   });
 
-  const handleOnSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
     const login = async () => {
@@ -41,12 +42,7 @@ function Login() {
         <div className="col col-md-6 col-lg-5 form-container">
           <h1>Login</h1>
           <p>Ready to start using X?</p>
-          <form
-            action=""
-            method="POST"
-            onSubmit={handleOnSubmit}
-            className="p-0"
-          >
+          <form action="" method="POST" onSubmit={handleLogin} className="p-0">
             <div className="mb-3">
               <div className="mb-3">
                 <input
@@ -77,7 +73,7 @@ function Login() {
             </button>
           </form>
           <p className="text-center m-0">
-            Don't have an account? <a href="/register">Sign up</a>
+            Don't have an account? <Link to="/register">Sign up</Link>
           </p>
         </div>
       </div>

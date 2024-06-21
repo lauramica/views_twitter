@@ -13,7 +13,7 @@ function TweetInput({ users, tweets }) {
 
   const [tweet, setTweet] = useState("");
 
-  const handleOnSubmit = (e) => {
+  const handlePost = (e) => {
     e.preventDefault();
     if (tweet !== "") {
       const storeTweet = async () => {
@@ -45,11 +45,7 @@ function TweetInput({ users, tweets }) {
             />
           </div>
           <div className="d-flex w-100">
-            <form
-              className="tweet-form"
-              method="POST"
-              onSubmit={handleOnSubmit}
-            >
+            <form className="tweet-form" method="POST" onSubmit={handlePost}>
               <label htmlFor="tweet-content"></label>
               <textarea
                 rows="3"

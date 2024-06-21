@@ -10,7 +10,7 @@ function Tweet({ tweet }) {
   const { _id } = tweet;
   const dispatch = useDispatch();
 
-  const handleOnClick = () => {
+  const handleDelete= () => {
     const deleteTweet = async () => {
       await axios({
         url: `http://localhost:3000/tweets/${_id}`,
@@ -49,7 +49,7 @@ function Tweet({ tweet }) {
             <i className="bi bi-heart"></i>
             {/*  <i className="bi bi-heart-fill"></i> */}
             {tweet.user._id === user._id ? (
-              <i class="bi bi-trash3" onClick={handleOnClick}></i>
+              <i class="bi bi-trash3" onClick={handleDelete}></i>
             ) : (
               <></>
             )}{" "}
