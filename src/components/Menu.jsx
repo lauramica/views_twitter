@@ -28,7 +28,7 @@ function Menu() {
         </div>
         <div className="d-flex p-2">
           <Link
-            to={`/${user.userId}`}
+            to={`/${user.username}`}
             className="text-decoration-none text-light"
           >
             <span className="me-3">

@@ -1,12 +1,9 @@
 import React from "react";
 import "../ProfileUser.css";
-import { useSelector } from "react-redux";
 
-function ProfileHeader() {
-  const user = useSelector((state) => state.user);
-
+function ProfileHeader({ user }) {
   return (
-    <div className="profile-header">
+    <div className="profile-header border-bottom">
       <div className="bg-profile">
         <img
           src="../images/bg-profile-img.jpg"

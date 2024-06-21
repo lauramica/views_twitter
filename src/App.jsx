@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import User from "./pages/User";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,8 +23,8 @@ function App() {
       element: <Register />,
     },
     {
-      path: "/:userId",
-      element: <User />,
+      path: "/:username",
+      element: <UserProfile />,
     },
     {
       path: "*",

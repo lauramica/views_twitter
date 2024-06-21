@@ -1,12 +1,11 @@
 import "../Home.css";
 import { addTweet } from "../redux/tweetsSlice";
-
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function TweetInput({ users, tweets }) {
+function TweetInput() {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,8 +39,9 @@ function TweetInput({ users, tweets }) {
           <div className="img-box">
             <img
               src={user.photo}
-              alt="gatito"
+              alt="avatar"
               className="profile-picture m-2"
+              onClick={() => navigate(`/${user.username}`)}
             />
           </div>
           <div className="d-flex w-100">
