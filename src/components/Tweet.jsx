@@ -44,21 +44,19 @@ function Tweet({ tweet, user }) {
 
   return (
     <div className="tweets-container">
-      <div className="tweet-box d-flex align-items-start">
-        <div className="img-box m-2">
-          <Link to={`/${user.username}`}>
-            <img src={user.photo} alt="avatar" className="profile-picture" />
-          </Link>
-        </div>
-        <div className="d-flex flex-column justify-content-center mt-2">
-          <div className="d-flex">
+      <div className="tweet-box w-100">
+        <Link to={`/${user.username}`}>
+          <img src={user.photo} alt="avatar" className="profile-picture m-2" />
+        </Link>
+        <div className="d-flex flex-column justify-content-center m-2">
+          <div className="d-flex justify-content-start">
             <p
-              className="bold me-2 as-link"
+              className="bold me-2 as-link text-nowrap"
               onClick={() => navigate(`/${user.username}`)}
             >
               {user.firstname} {user.lastname}
             </p>
-            <p className="grey">
+            <p className="grey line-clamp">
               @{user.username} · <small>{formattedDate}</small>
             </p>
           </div>

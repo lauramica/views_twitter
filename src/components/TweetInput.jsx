@@ -36,16 +36,14 @@ function TweetInput() {
   return (
     <>
       <div className="formContainer d-flex flex-column pb-3">
-        <div className="d-flex justify-content-between">
-          <div className="img-box">
-            <Link to={`/${user.username}`}>
+        <div className="d-flex">
               <img
                 src={user.photo}
                 alt="avatar"
                 className="profile-picture m-2"
+                onClick={navigate(`/${user.username}`)}
               />
-            </Link>
-          </div>
+
           <div className="d-flex w-100">
             <form className="tweet-form" method="POST" onSubmit={handlePost}>
               <label htmlFor="tweet-content"></label>

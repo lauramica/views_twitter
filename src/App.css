@@ -11,13 +11,16 @@ body {
   max-width: 1500px;
 }
 
-.side-element {
+.side-bar {
   width: 350px;
+}
+
+.side-element {
+  width: 500px;
 }
 
 .menu-container {
   height: 100vh;
-  position: fixed;
 }
 
 .profile-picture {
@@ -25,6 +28,7 @@ body {
   width: 60px;
   object-fit: cover;
   border-radius: 50%;
+  float: left;
 }
 
 .grey {
@@ -46,11 +50,12 @@ textarea {
 .tweet-box {
   border-bottom: solid;
   border-width: 1px;
-  width: 100%;
 }
 
-.img-box {
-  height: 9rem;
+.line-clamp {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .trending-box {
@@ -69,20 +74,15 @@ textarea {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .side-bar {
-    width: 80px;
+    width: 60px;
+    position: fixed;
   }
   .menu-text {
     display: none;
   }
-}
-
-@media (min-width: 1025px) {
-  .block-element {
-    display: block;
-  }
-  .unblock-element {
-    display: none;
+  .main-element {
+    margin-left: 60px;
   }
 }

@@ -18,21 +18,19 @@ function Menu() {
         <div className="p-2">
           <i className="bi bi-twitter-x x-icon-styles"></i>
         </div>
-        <div className="d-flex p-2">
+        <div className="p-2 d-flex flex-column">
           <Link to={`/`} className="text-decoration-none text-light">
-            <i className="bi bi-house-fill me-3"></i>
-
-            <span className="m-0 menu-text">Home</span>
+            <i className="bi bi-house-fill"></i>
+            <span className="ms-2 menu-text">Home</span>
           </Link>
         </div>
-        <div className="d-flex p-2">
+        <div className="p-2">
           <Link
             to={`/${user.username}`}
             className="text-decoration-none text-light"
           >
-            <i className="bi bi-person me-3"></i>
-
-            <span className="m-0 menu-text">Profile</span>
+            <i className="bi bi-person"></i>
+            <span className="ms-2 menu-text">Profile</span>
           </Link>
         </div>
         <div>

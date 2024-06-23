@@ -12,14 +12,16 @@ function ProfileHeader({ user }) {
       />
       <div className="d-flex justify-content-between mt-2">
         <span className="lh-1">
-          <h2>
+          <h3 className="bold text-nowrap">
             {user.firstname} {user.lastname}
-          </h2>
+          </h3>
           <p className="grey">@{user.username}</p>
-          <p>{user.description}</p>
         </span>
-        <small className="grey mt-2">19 Following 123 Followers</small>
+        <small className="grey mt-2 text-nowrap">
+          19 Following 123 Followers
+        </small>
       </div>
+      <p>{user.description}</p>
     </div>
   );
 }

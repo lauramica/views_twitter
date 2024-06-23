@@ -45,10 +45,10 @@ function User() {
     return (
       <>
         <div className="container d-flex userContainer">
-          <div className="side-element side-bar">
+          <div className="side-bar side-element">
             <Menu />
           </div>
-          <div className="w-100 px-4">
+          <div className="main-element w-100 px-4">
             <ProfileHeader user={user} />
             {tweets.map((tweet) => (
               <div key={tweet._id}>
