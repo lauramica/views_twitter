@@ -35,14 +35,15 @@ function TweetInput() {
 
   return (
     <>
-      <div className="formContainer d-flex flex-column pb-3">
+      <div className="post-container d-flex flex-column pb-3">
         <div className="d-flex">
-              <img
-                src={user.photo}
-                alt="avatar"
-                className="profile-picture m-2"
-                onClick={navigate(`/${user.username}`)}
-              />
+          <Link to={`/${user.username}`}>
+            <img
+              src={user.photo}
+              alt="avatar"
+              className="profile-picture m-2"
+            />
+          </Link>
 
           <div className="d-flex w-100">
             <form className="tweet-form" method="POST" onSubmit={handlePost}>
@@ -51,7 +52,7 @@ function TweetInput() {
                 rows="3"
                 charswidth="150"
                 type="text"
-                className="form-control tweetInput me-2 mb-1"
+                className="form-control tweet-input me-2 mb-1"
                 id="tweet-content"
                 name="tweet-content"
                 placeholder="Whats happening?"

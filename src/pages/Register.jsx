@@ -30,7 +30,7 @@ function Register() {
   };
 
   return (
-    <>
+    <div className="window-box">
       <div className="container bg-form-container">
         <div className="col-md-6 col-lg-7 next-to-form-container">
           <h2>
@@ -39,8 +39,8 @@ function Register() {
           <h4 className="m-0">Hi! Welcome to X Clone.</h4>
         </div>
         <div className="col col-md-6 col-lg-5 form-container">
-          <h1>Sign up</h1>
-          <p>Create an account and start using X.</p>
+          <h2>Sign up</h2>
+          <p className="text-nowrap">Create an account and start using X.</p>
           <form
             action=""
             method="POST"
@@ -48,14 +48,12 @@ function Register() {
             className="p-0"
           >
             <div className="mb-3">
-              <label htmlFor="firstname" className="form-label">
-                Firstname
-              </label>
               <input
                 type="text"
                 className="form-control"
                 id="fistname"
                 name="firstname"
+                placeholder="Firstname"
                 value={user.firstname}
                 aria-describedby="firstname"
                 onChange={(e) =>
@@ -64,71 +62,58 @@ function Register() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="lastname" className="form-label">
-                Lastname
-              </label>
               <input
                 type="text"
                 className="form-control"
                 id="lastname"
                 name="lastname"
+                placeholder="Lastname"
                 value={user.lastname}
                 aria-describedby="lastname"
                 onChange={(e) => setUser({ ...user, lastname: e.target.value })}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email address
-              </label>
               <input
                 type="email"
                 className="form-control"
                 id="email"
                 name="email"
+                placeholder="Email"
                 value={user.email}
                 aria-describedby="email"
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
-              <div className="mb-3">
-                <label htmlFor="username" className="form-label">
-                  Username
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="username"
-                  name="username"
-                  value={user.username}
-                  aria-describedby="username"
-                  onChange={(e) =>
-                    setUser({ ...user, username: e.target.value })
-                  }
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="photo" className="form-label">
-                  Default file input example
-                </label>
-                <input
-                  className="form-control"
-                  type="file"
-                  id="photo"
-                  name="photo"
-                  value={user.photo}
-                  onChange={(e) => setUser({ ...user, photo: e.target.value })}
-                />
-              </div>
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                name="username"
+                placeholder="Username"
+                value={user.username}
+                aria-describedby="username"
+                onChange={(e) => setUser({ ...user, username: e.target.value })}
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                className="form-control"
+                type="file"
+                id="photo"
+                name="photo"
+                value={user.photo}
+                onChange={(e) => setUser({ ...user, photo: e.target.value })}
+              />
             </div>
             <div>
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
               <input
                 type="password"
                 className="form-control"
                 id="password"
                 name="passwprd"
+                placeholder="Password"
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
@@ -142,7 +127,7 @@ function Register() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Register;

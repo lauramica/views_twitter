@@ -1,7 +1,13 @@
+.window-box {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .bg-form-container {
   background-color: rgb(2, 20, 34);
   border-radius: 15px;
-  margin-top: 2rem;
   padding: 0;
 }
 

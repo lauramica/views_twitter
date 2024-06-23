@@ -1,9 +1,9 @@
-.homeContainer {
+.home-container {
   color: white;
   margin: 0 auto;
 }
 
-.formContainer {
+.post-container {
   border-bottom: solid;
   border-width: 1px;
 }
@@ -12,7 +12,7 @@
   width: 100%;
 }
 
-.tweetInput {
+.tweet-input {
   height: 5rem;
   background-color: rgb(1, 16, 27);
   border-radius: 0px;
@@ -20,11 +20,11 @@
   color: white;
 }
 
-.tweetInput:focus {
+.tweet-input:focus {
   color: rgb(255, 255, 255);
   background-color: rgb(2, 20, 34);
 }
 
-.tweetInput::placeholder {
+.tweet-input::placeholder {
   color: grey;
 }

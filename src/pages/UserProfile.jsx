@@ -44,7 +44,7 @@ function User() {
 
     return (
       <>
-        <div className="container d-flex userContainer">
+        <div className="container d-flex user-container">
           <div className="side-bar side-element">
             <Menu />
           </div>

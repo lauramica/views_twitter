@@ -1,5 +1,5 @@
 :root {
-  margin: 0;
+  margin: auto;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -9,6 +9,11 @@
 body {
   background-color: rgb(1, 16, 27);
   max-width: 1500px;
+}
+
+.main-element {
+  padding-right: 20px;
+  padding-left: 10px;
 }
 
 .side-bar {
@@ -83,6 +88,6 @@ textarea {
     display: none;
   }
   .main-element {
-    margin-left: 60px;
+    margin-left: 60px; /*buscar forma adecuada de posicionar este en relación al sidebar, porque así excedemos el root!*/
   }
 }

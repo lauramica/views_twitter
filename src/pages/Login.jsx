@@ -31,7 +31,7 @@ function Login() {
   };
 
   return (
-    <>
+    <div className="window-box">
       <div className="container bg-form-container">
         <div className="col-md-6 col-lg-7 next-to-form-container">
           <h2>
@@ -40,7 +40,7 @@ function Login() {
           <h4 className="m-0">Hey! Nice to see you again.</h4>
         </div>
         <div className="col col-md-6 col-lg-5 form-container">
-          <h1>Login</h1>
+          <h2>Login</h2>
           <p>Ready to start using X?</p>
           <form action="" method="POST" onSubmit={handleLogin} className="p-0">
             <div className="mb-3">
@@ -77,7 +77,7 @@ function Login() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

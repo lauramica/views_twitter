@@ -19,11 +19,11 @@ function Home() {
   } else {
     return (
       <>
-        <div className="container d-flex homeContainer">
+        <div className="container d-flex home-container">
           <div className="side-bar side-element">
             <Menu />
           </div>
-          <div className="main-element w-100 px-4">
+          <div className="main-element">
             <h2 className="m-0 p-2">Home</h2>
             <TweetInput />
             <TweetsList />
