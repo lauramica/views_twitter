@@ -1,7 +1,7 @@
 import "../FormsPages.css";
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 function Register() {
   const navigate = useNavigate();

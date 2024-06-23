@@ -2,9 +2,8 @@ import "../Home.css";
 import { addTweet } from "../redux/tweetsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 function TweetInput() {
   const user = useSelector((state) => state.user);

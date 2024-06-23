@@ -1,12 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useState } from "react";
-import "./App.css";
-
 import Home from "./pages/Home";
-import ErrorPage from "./pages/ErrorPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import UserProfile from "./pages/UserProfile";
+import ErrorPage from "./pages/ErrorPage";
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter([

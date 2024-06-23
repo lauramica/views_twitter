@@ -1,9 +1,8 @@
-import "../Home.css";
+import Menu from "../components/Menu";
 import TweetInput from "../components/TweetInput";
 import TweetsList from "../components/TweetsList";
-import Menu from "../components/Menu";
 import Trending from "../components/Trendings";
-
+import "../Home.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";

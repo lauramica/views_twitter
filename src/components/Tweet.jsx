@@ -1,7 +1,7 @@
-import axios from "axios";
+import { destroyTweet, tweetIsLiked } from "../redux/tweetsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import { destroyTweet, tweetIsLiked } from "../redux/tweetsSlice";
+import axios from "axios";
 
 function Tweet({ tweet, user }) {
   const dispatch = useDispatch();

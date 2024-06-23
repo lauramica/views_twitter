@@ -1,15 +1,13 @@
+import Menu from "../components/Menu";
 import ProfileHeader from "../components/ProfileHeader";
 import Tweet from "../components/Tweet";
-import Menu from "../components/Menu";
 import Trending from "../components/Trendings";
+import "../UserProfile.css";
 import { fetchTweets } from "../redux/tweetsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
-import "../ProfileUser.css";
 
 function User() {
   const dispatch = useDispatch();

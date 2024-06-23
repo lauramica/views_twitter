@@ -1,8 +1,8 @@
 function ErrorPage() {
   return (
-    <>
-      <h1>Error 404 - Page not found</h1>
-    </>
+    <div className="window-box">
+      <h1 className="white">Error 404 - Page not found</h1>
+    </div>
   );
 }
 
