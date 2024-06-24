@@ -11,7 +11,7 @@ import axios from "axios";
 
 function User() {
   const dispatch = useDispatch();
-  const params = useParams({});
+  const params = useParams();
   const navigate = useNavigate();
 
   const loggedUser = useSelector((state) => state.user);

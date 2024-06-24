@@ -69,7 +69,7 @@ function TweetInput() {
                     type="submit"
                     className="btn btn-primary rounded-pill m-2"
                   >
-                    Post
+                    Tweet!
                   </button>
                 </div>
               </form>

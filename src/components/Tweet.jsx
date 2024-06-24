@@ -27,19 +27,15 @@ function Tweet({ tweet, user }) {
     deleteTweet();
   };
 
-  const handleLike = () => {
-    const likeTweet = async () => {
-      await axios({
-        url: `http://localhost:3000/tweets/${_id}`,
-        method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${loggedUser.token}
-          `,
-        },
-      });
-      dispatch(tweetIsLiked({ tweetId: tweet._id, userId: loggedUser._id }));
-    };
-    likeTweet();
+  const handleLike = async () => {
+    await axios({
+      url: `http://localhost:3000/tweets/${_id}`,
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${loggedUser.token}`,
+      },
+    });
+    dispatch(tweetIsLiked({ tweetId: tweet._id, userId: loggedUser._id }));
   };
 
   return (
@@ -58,10 +54,10 @@ function Tweet({ tweet, user }) {
             />
           </Link>
           <div className="d-flex flex-column justify-content-center m-2">
-            <div className="">
+            <div>
               <span
                 className="bold me-2 as-link tweet-overflow tweet-username"
-                onClick={() => navigate(`/${user.username}`)}
+                onClick={() => navigate(`/profile/${user.username}`)}
               >
                 {user.firstname}
               </span>
