@@ -4,12 +4,18 @@ import "../UserProfile.css";
 function ProfileHeader({ user }) {
   return (
     <div className="profile-header border-bottom">
-      <div className="profile-banner"></div>
-      <img
-        src={user.photo}
-        alt="user-profile-image"
-        className="profile-avatar"
-      />
+      <div className="header">
+        <div className="profile-banner"></div>
+        <img
+          src={
+            user.avatar.includes("http")
+              ? user.avatar
+              : `http://localhost:3000/img/${user.avatar}`
+          }
+          alt="user-profile-image"
+          className="profile-avatar"
+        />
+      </div>
       <div className="d-flex justify-content-between mt-2">
         <span className="lh-1">
           <h3 className="bold text-nowrap">

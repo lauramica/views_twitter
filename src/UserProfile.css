@@ -9,6 +9,9 @@
   background-size: cover;
 }
 
+.header {
+}
+
 .profile-avatar {
   height: 120px;
   width: 120px;
@@ -17,14 +20,4 @@
   margin-inline-start: 10px;
   border: 4px var(--white) solid;
   margin-top: -70px;
-}
-
-@media (min-width: 768px) {
-  .profile-banner {
-    height: 250px;
-  }
-  .profile-avatar {
-    height: 140px;
-    width: 140px;
-  }
 }

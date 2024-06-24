@@ -17,7 +17,7 @@ function User() {
   const loggedUser = useSelector((state) => state.user);
   const tweets = useSelector((state) => state.tweets);
 
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
 
   if (!loggedUser.token) {
     useEffect(() => {
@@ -41,24 +41,26 @@ function User() {
     }, []);
 
     return (
-      <>
-        <div className="container d-flex user-container">
-          <div className="side-bar">
-            <Menu />
+      user && (
+        <>
+          <div className="container d-flex user-container">
+            <div className="side-bar">
+              <Menu />
+            </div>
+            <div className="main-element">
+              <ProfileHeader user={user} />
+              {tweets.map((tweet) => (
+                <div key={tweet._id}>
+                  <Tweet tweet={tweet} user={user} />
+                </div>
+              ))}
+            </div>
+            <div className="side-element trending p-2">
+              <Trending />
+            </div>
           </div>
-          <div className="main-element w-100 px-4">
-            <ProfileHeader user={user} />
-            {tweets.map((tweet) => (
-              <div key={tweet._id}>
-                <Tweet tweet={tweet} user={user} />
-              </div>
-            ))}
-          </div>
-          <div className="side-element trending p-2">
-            <Trending />
-          </div>
-        </div>
-      </>
+        </>
+      )
     );
   }
 }

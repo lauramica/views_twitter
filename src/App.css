@@ -1,6 +1,7 @@
 .main-element {
   padding-right: 20px;
-  padding-left: 10px;
+  padding-left: 20px;
+  width: 100%;
 }
 
 .side-bar {
@@ -9,9 +10,12 @@
 
 .side-element {
   width: 500px;
+  position: relative;
 }
 
 .menu-container {
+  position: sticky;
+  top: 0;
   height: 100vh;
 }
 
@@ -57,7 +61,8 @@ textarea {
 .trending-box {
   background-color: var(--background);
   border-radius: 15px;
-  position: fixed;
+  position: sticky;
+  top: 0;
 }
 
 .as-link:hover {
@@ -73,19 +78,18 @@ textarea {
 @media (max-width: 992px) {
   .side-bar {
     width: 60px;
-    position: fixed;
+    position: relative;
+    top: 0;
   }
   .menu-text {
     display: none;
   }
-  .main-element {
-    margin-left: 60px; /*buscar forma adecuada de posicionar este en relación al sidebar, porque así excedemos el root!*/
-  }
 }
-
 
 @media (max-width: 992px) {
   .side-bar {
     width: 60px;
-    position: fixed;
-  }}
+    position: relative;
+    top: 0;
+  }
+}

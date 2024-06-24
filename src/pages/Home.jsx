@@ -17,21 +17,23 @@ function Home() {
     }, []);
   } else {
     return (
-      <>
-        <div className="container d-flex home-container">
-          <div className="side-bar">
-            <Menu />
+      user && (
+        <>
+          <div className="container d-flex home-container">
+            <div className="side-bar">
+              <Menu />
+            </div>
+            <div className="main-element">
+              <h2 className="m-0 p-2">Home</h2>
+              <TweetInput />
+              <TweetsList user={user} />
+            </div>
+            <div className="side-element trending p-2">
+              <Trending />
+            </div>
           </div>
-          <div className="main-element">
-            <h2 className="m-0 p-2">Home</h2>
-            <TweetInput />
-            <TweetsList />
-          </div>
-          <div className="side-element trending p-2">
-            <Trending />
-          </div>
-        </div>
-      </>
+        </>
+      )
     );
   }
 }

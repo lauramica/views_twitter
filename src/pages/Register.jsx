@@ -5,15 +5,24 @@ import axios from "axios";
 
 function Register() {
   const navigate = useNavigate();
+  const formData = new FormData();
 
   const [user, setUser] = useState({
     firstname: "",
     lastname: "",
     email: "",
     username: "",
-    photo: "",
     password: "",
   });
+
+  const [file, setFile] = useState();
+
+  formData.append("firstname", user.firstname);
+  formData.append("lastname", user.lastname);
+  formData.append("email", user.email);
+  formData.append("username", user.username);
+  formData.append("avatar", file);
+  formData.append("password", user.password);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -22,7 +31,8 @@ function Register() {
       await axios({
         url: `http://localhost:3000/users`,
         method: "POST",
-        data: user,
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
       });
     };
     storeUser();
@@ -101,10 +111,10 @@ function Register() {
               <input
                 className="form-control"
                 type="file"
-                id="photo"
-                name="photo"
-                value={user.photo}
-                onChange={(e) => setUser({ ...user, photo: e.target.value })}
+                id="avatar"
+                name="avatar"
+                value={user.avatar}
+                onChange={(e) => setFile(e.target.files[0])}
               />
             </div>
             <div>
@@ -122,9 +132,10 @@ function Register() {
               Sign up
             </button>
           </form>
-          <p className="text-center m-0">
-            Already have an account? <Link to="/login">Sign in</Link>
-          </p>
+          <div className="text-center m-0">
+            <p className="m-0">Already have an account? </p>
+            <Link to="/login">Sign in</Link>
+          </div>
         </div>
       </div>
     </div>

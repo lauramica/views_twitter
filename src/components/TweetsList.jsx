@@ -5,10 +5,9 @@ import { React, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-function TweetsList() {
+function TweetsList({ user }) {
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.user);
   const tweets = useSelector((state) => state.tweets);
 
   useEffect(() => {
