@@ -1,5 +1,5 @@
 .home-container {
-  color: white;
+  color: var(--white);
   margin: 0 auto;
 }
 
@@ -17,14 +17,15 @@
   background-color: rgb(1, 16, 27);
   border-radius: 0px;
   border: none;
-  color: white;
+  color: var(--white);
 }
 
 .tweet-input:focus {
-  color: rgb(255, 255, 255);
+  color: var(--white);
   background-color: rgb(2, 20, 34);
+  box-shadow: none!important;
 }
 
 .tweet-input::placeholder {
-  color: grey;
+  color: var(--grey);
 }

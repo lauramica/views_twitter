@@ -24,7 +24,7 @@ function Menu() {
             <span className="ms-2 menu-text">Home</span>
           </Link>
         </div>
-        <div className="p-2">
+        <div className="d-flex flex-column p-2">
           <Link
             to={`/${user.username}`}
             className="text-decoration-none text-light"

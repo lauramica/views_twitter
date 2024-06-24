@@ -19,7 +19,7 @@ function Home() {
     return (
       <>
         <div className="container d-flex home-container">
-          <div className="side-bar side-element">
+          <div className="side-bar">
             <Menu />
           </div>
           <div className="main-element">

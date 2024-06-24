@@ -6,7 +6,7 @@
 }
 
 .bg-form-container {
-  background-color: rgb(2, 20, 34);
+  background-color: var(--darkblue);
   border-radius: 15px;
   padding: 0;
 }
@@ -16,7 +16,7 @@
 }
 
 .form-container {
-  background-color: white;
+  background-color: var(--white);
   padding: 4rem;
   border-radius: 15px;
 }
@@ -29,7 +29,7 @@
 
   .next-to-form-container {
     display: block;
-    color: white;
+    color: var(--white);
     padding: 4rem;
     display: flex;
     flex-direction: column;

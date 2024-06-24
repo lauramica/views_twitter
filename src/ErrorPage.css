@@ -1,0 +1,25 @@
+.errorpage-container svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.errorpage-blue {
+  font-size: 8rem;
+  color: var(--skyblue);
+}
+
+.errorpage-white {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.errorpage-homebtn {
+  font-size: 1.2rem;
+  color: var(--skyblue) !important;
+  border: 2px outset var(--skyblue);
+  margin-top: 100px;
+}

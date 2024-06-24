@@ -1,5 +1,5 @@
 .user-container {
-  color: white;
+  color: var(--white);
 }
 
 .profile-banner {
@@ -15,7 +15,7 @@
   object-fit: cover;
   border-radius: 50%;
   margin-inline-start: 10px;
-  border: 4px white solid;
+  border: 4px var(--white) solid;
   margin-top: -70px;
 }
 

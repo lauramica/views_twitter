@@ -1,16 +1,10 @@
-:root {
-  --azul-oscuro: rgb(2, 20, 34);
-  --celeste: rgb(12, 139, 217);
-  --blanco: rgb(250, 250, 250);
-}
-
 .main-element {
   padding-right: 20px;
   padding-left: 10px;
 }
 
 .side-bar {
-  width: 350px;
+  width: 400px;
 }
 
 .side-element {
@@ -30,11 +24,11 @@
 }
 
 .grey {
-  color: grey;
+  color: var(--grey);
 }
 
 .white {
-  color: var(--blanco);
+  color: var(--white);
 }
 
 .bold {
@@ -61,46 +55,13 @@ textarea {
 }
 
 .trending-box {
-  background-color: rgba(100, 99, 109, 0.13);
+  background-color: var(--background);
   border-radius: 15px;
   position: fixed;
 }
 
 .as-link:hover {
   cursor: pointer;
-}
-
-svg {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-span {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.texto-celeste {
-  font-size: 10rem;
-  color: var(--celeste);
-}
-
-.texto-blanco {
-  font-size: 3rem;
-  color: var(--blanco);
-}
-
-.boton-inicio {
-  font-size: 1.5rem;
-  color: var(--celeste) !important;
-  border: 2px outset var(--celeste);
-  display: flex;
-  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -121,3 +82,10 @@ span {
     margin-left: 60px; /*buscar forma adecuada de posicionar este en relación al sidebar, porque así excedemos el root!*/
   }
 }
+
+
+@media (max-width: 992px) {
+  .side-bar {
+    width: 60px;
+    position: fixed;
+  }}
