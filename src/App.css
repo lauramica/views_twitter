@@ -5,11 +5,11 @@
 }
 
 .side-bar {
-  width: 400px;
+  width: 350px;
 }
 
 .side-element {
-  width: 500px;
+  width: 400px;
   position: relative;
 }
 
@@ -73,6 +73,9 @@ textarea {
   .trending {
     display: none;
   }
+  .tweet-username {
+    display: block;
+  }
 }
 
 @media (max-width: 992px) {
@@ -83,13 +86,5 @@ textarea {
   }
   .menu-text {
     display: none;
-  }
-}
-
-@media (max-width: 992px) {
-  .side-bar {
-    width: 60px;
-    position: relative;
-    top: 0;
   }
 }

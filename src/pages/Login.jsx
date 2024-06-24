@@ -1,13 +1,18 @@
 import "../FormsPages.css";
 import { loginUser } from "../redux/userSlice";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const loggedUser = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (loggedUser.token) return navigate("/");
+  }, []);
 
   const [user, setUser] = useState({
     email: "",

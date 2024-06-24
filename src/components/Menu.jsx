@@ -26,7 +26,7 @@ function Menu() {
         </div>
         <div className="d-flex flex-column p-2">
           <Link
-            to={`/${user.username}`}
+            to={`/profile/${user.username}`}
             className="text-decoration-none text-light"
           >
             <i className="bi bi-person"></i>

@@ -46,7 +46,7 @@ function Tweet({ tweet, user }) {
     user.avatar && (
       <div className="tweets-container">
         <div className="tweet-box">
-          <Link to={`/${user.username}`}>
+          <Link to={`/profile/${user.username}`}>
             <img
               src={
                 user.avatar.includes("http")
@@ -58,16 +58,16 @@ function Tweet({ tweet, user }) {
             />
           </Link>
           <div className="d-flex flex-column justify-content-center m-2">
-            <div className="d-flex justify-content-start">
-              <p
-                className="bold me-2 as-link"
+            <div className="">
+              <span
+                className="bold me-2 as-link tweet-overflow tweet-username"
                 onClick={() => navigate(`/${user.username}`)}
               >
-                {user.firstname} {user.lastname}
-              </p>
-              <p className="grey">
-                @{user.username} · <small>{formattedDate}</small>
-              </p>
+                {user.firstname}
+              </span>
+              <span className="grey tweet-overflow">
+                @{user.username} · {formattedDate}
+              </span>
             </div>
             <p>{tweet.content}</p>
             <div className="m-0 d-flex justify-content-between">

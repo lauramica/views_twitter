@@ -21,7 +21,7 @@ function App() {
       element: <Register />,
     },
     {
-      path: "/:username",
+      path: "/profile/:username",
       element: <UserProfile />,
     },
     {

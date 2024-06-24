@@ -36,7 +36,7 @@ function TweetInput() {
       <>
         <div className="post-container d-flex flex-column pb-3">
           <div className="d-flex">
-            <Link to={`/${user.username}`}>
+            <Link to={`/profile/${user.username}`}>
               <img
                 src={
                   user.avatar.includes("http")
