@@ -9,7 +9,7 @@ function Trending() {
       </div>
       <div>
         <p className="grey text-nowrap m-0">Entertainment · Trending</p>
-        <p className="m-0">#DamonSlayer</p>
+        <p className="m-0">#DemonSlayer</p>
         <p className="grey m-0">97.5K Tweets</p>
       </div>
       <div>
